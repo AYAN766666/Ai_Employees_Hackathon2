@@ -2,6 +2,8 @@
 node_modules/
 /dist/
 /build/
+# Virtual Environments
+.venv/
 .env
 .env.local
 .env.development.local
@@ -29,3 +31,10 @@ Thumbs.db
 # Docusaurus
 .docusaurus/
 build/
+
+# Python
+__pycache__/
+*.py[cod]
+*.class
+.venv/
+.env

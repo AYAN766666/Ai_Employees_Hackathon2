@@ -1,0 +1,548 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  
+  /* Custom colors */
+  --accent-blue: #6366f1;
+  --accent-purple: #a855f7;
+  --accent-cyan: #06b6d4;
+  --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #06b6d4 100%);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  
+  --accent-blue: #818cf8;
+  --accent-purple: #c084fc;
+  --accent-cyan: #22d3ee;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Pulse Glow Animation */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(99, 102, 241, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.6), 0 0 40px rgba(168, 85, 247, 0.3);
+  }
+}
+
+/* Gradient Shift Animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* ========================================
+   HERO SECTION - MODERN GRADIENT DESIGN
+   ======================================== */
+
+.hero {
+  background: linear-gradient(-45deg, #6366f1, #a855f7, #06b6d4, #2e8555);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero__title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-out;
+  margin-bottom: 1.5rem;
+}
+
+.hero__subtitle {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  animation: fadeInUp 1s ease-out 0.2s both;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero__buttons {
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.hero .button--lg {
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 50px;
+  background: white;
+  color: #6366f1;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero .button--lg:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   SECTIONS - SMOOTH ANIMATIONS
+   ======================================== */
+
+.padding-vert--xl,
+.padding-vert--lg {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Section Headers */
+section h2 {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+/* ========================================
+   CARDS - MODERN HOVER EFFECTS
+   ======================================== */
+
+.row .col {
+  animation: fadeInUp 0.8s ease-out;
+  animation-fill-mode: both;
+}
+
+.row .col:nth-child(1) { animation-delay: 0.1s; }
+.row .col:nth-child(2) { animation-delay: 0.2s; }
+.row .col:nth-child(3) { animation-delay: 0.3s; }
+
+.row .col > div {
+  padding: 2rem;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 2px solid transparent;
+}
+
+[data-theme='dark'] .row .col > div {
+  background: #1a1a1a;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.row .col > div:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.3);
+  border-color: var(--accent-purple);
+}
+
+.row .col img {
+  animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  transition: all 0.3s ease;
+}
+
+.row .col:hover img {
+  filter: drop-shadow(0 8px 16px rgba(99, 102, 241, 0.4));
+  transform: scale(1.1);
+}
+
+.row .col h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.row .col p {
+  line-height: 1.8;
+  color: var(--ifm-font-color-base);
+  font-size: 1.05rem;
+}
+
+/* ========================================
+   NAVBAR - GLASSMORPHISM EFFECT
+   ======================================== */
+
+.navbar {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+[data-theme='dark'] .navbar {
+  background: rgba(20, 20, 20, 0.9);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+.navbar__title {
+  font-weight: 800;
+  font-size: 1.3rem;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar__item {
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar__item::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: var(--accent-gradient);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar__item:hover::after {
+  width: 100%;
+}
+
+/* ========================================
+   BUTTONS - MODERN GRADIENT STYLE
+   ======================================== */
+
+.button {
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.button--primary {
+  background: var(--accent-gradient);
+  color: white;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.button--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.6);
+}
+
+/* ========================================
+   SIDEBAR - SMOOTH TRANSITIONS
+   ======================================== */
+
+.menu__link {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  margin: 4px 0;
+}
+
+.menu__link:hover {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+  transform: translateX(5px);
+}
+
+.menu__link--active {
+  background: var(--accent-gradient);
+  color: white;
+  box-shadow: 0 2px 10px rgba(99, 102, 241, 0.4);
+}
+
+.menu__link--active:hover {
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.6);
+}
+
+/* ========================================
+   FOOTER - MODERN GRADIENT
+   ======================================== */
+
+.footer {
+  background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+  padding: 3rem 0 2rem;
+}
+
+.footer__title {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.footer__link-item {
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footer__link-item:hover {
+  transform: translateX(5px);
+  color: var(--accent-cyan);
+}
+
+/* ========================================
+   CODE BLOCKS - ENHANCED STYLING
+   ======================================== */
+
+.prism-code {
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.prism-code:hover {
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.3);
+  transform: scale(1.01);
+}
+
+/* ========================================
+   TABLES - MODERN DESIGN
+   ======================================== */
+
+table {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='dark'] table {
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+table thead {
+  background: var(--accent-gradient);
+  color: white;
+}
+
+table tbody tr {
+  transition: all 0.3s ease;
+}
+
+table tbody tr:hover {
+  background: rgba(99, 102, 241, 0.05);
+  transform: scale(1.01);
+}
+
+/* ========================================
+   SCROLL PROGRESS INDICATOR
+   ======================================== */
+
+.main-wrapper {
+  position: relative;
+}
+
+.main-wrapper::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: var(--accent-gradient);
+  z-index: 9999;
+  transition: width 0.1s ease;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 996px) {
+  .hero__title {
+    font-size: 2.5rem;
+  }
+  
+  .hero__subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .row .col > div {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 3rem 0;
+  }
+  
+  .hero__title {
+    font-size: 2rem;
+  }
+  
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* ========================================
+   SMOOTH SCROLLING
+   ======================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========================================
+   GLOBAL TYPOGRAPHY IMPROVEMENTS
+   ======================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+p {
+  line-height: 1.8;
+}
+
+.markdown {
+  font-size: 1.05rem;
+}
+
+/* ========================================
+   CHATBOT ANIMATIONS
+   ======================================== */
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.5), 0 0 60px rgba(168, 85, 247, 0.3);
+  }
+  50% {
+    box-shadow: 0 8px 40px rgba(99, 102, 241, 0.8), 0 0 80px rgba(168, 85, 247, 0.5);
+  }
+}
+
+/* ========================================
+   IMAGE STYLING
+   ======================================== */
+
+img[src^="/img/"] {
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+img[src^="/img/"]:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.3);
+}
+
+/* Fix for images not showing */
+img {
+  max-width: 100%;
+  height: auto;
+}
